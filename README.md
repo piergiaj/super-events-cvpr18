@@ -48,7 +48,7 @@ Our code has been tested on Ubuntu 14.04 and 16.04 using python 2.7, [PyTorch](p
 
 # Setup
 
-1. Download the code ```git clone https://github.com/piergiaj/???```
+1. Download the code ```git clone https://github.com/piergiaj/super-events-cvpr18.git```
 
 2. Extract features from your dataset. See [Pytorch-I3D](https://github.com/piergiaj/pytorch-i3d) for our code to extract I3D features.
 
