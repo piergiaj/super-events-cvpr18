@@ -34,6 +34,7 @@ We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everym
 
 ## Results
 On Charades:
+
 |  Method | mAP (%) |
 | ------------- | ------------- |
 | Two-Stream + LSTM [1] | 9.6  |
@@ -42,6 +43,7 @@ On Charades:
 | I3D + Super-events | 19.41 |
 
 On MultiTHUMOS
+
 |  Method | mAP (%) |
 | ------------- | ------------- |
 | Two-Stream[2]  | 27.6  |
