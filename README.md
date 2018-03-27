@@ -39,7 +39,7 @@ On Charades:
 | ------------- | ------------- |
 | Two-Stream + LSTM [1] | 9.6  |
 | Sigurdsson et al. [1]  | 12.1  |
-| I3D baseline      | 17.22 |
+| I3D[3] baseline      | 17.22 |
 | I3D + Super-events | **19.41** |
 
 On MultiTHUMOS
@@ -49,7 +49,7 @@ On MultiTHUMOS
 | Two-Stream[2]  | 27.6  |
 | Two-Stream + LSTM[2] | 28.1 | 
 | Multi-LSTM[2]  | 29.6  |
-| I3D baseline | 29.7 |
+| I3D[3] baseline | 29.7 |
 | I3D + LSTM | 29.9 |
 | I3D + Super-events | **36.4** |
 
@@ -86,3 +86,5 @@ Our code has been tested on Ubuntu 14.04 and 16.04 using python 2.7, [PyTorch](p
 [1] G.  A.  Sigurdsson,  S.  Divvala,  A.  Farhadi,  and  A.  Gupta. Asynchronous temporal fields for action recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017
 
 [2] S. Yeung, O. Russakovsky, N. Jin, M. Andriluka, G. Mori, and L. Fei-Fei. Every moment counts: Dense detailed labeling of actions in complex videos. International Journal of Computer Vision (IJCV), pages 1–15, 2015
+
+[3] J. Carreira and A. Zisserman. Quo vadis, action recognition? A new model and the kinetics dataset. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
