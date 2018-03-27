@@ -10,17 +10,21 @@ If you find the code useful for your research, please cite our paper:
 
         @inproceedings{piergiovanni2018super,
               title={Learning Latent Super-Events to Detect Multiple Activities in Videos},
-              booktitle={CVPR},
+              booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
               author={AJ Piergiovanni and Michael S. Ryoo},
               year={2018}
         }
 
 
 # Temporal Structure Filters
-The core of our approach, the temporal structure filters can be found in [temporal_structure_filter.py](temporal_structure_filter.py). This creates the TSF with N cauchy distributions. We create the super-event model in [super_event.py](super_event.py).
+![tsf](/examples/temporal-structure-filter.png?raw=true "tsf")
+
+The core of our approach, the temporal structure filters (TSF) can be found in [temporal_structure_filter.py](temporal_structure_filter.py). This creates the TSF with N cauchy distributions. We create the super-event model in [super_event.py](super_event.py).
 
 
 # Activity Detection Experiments
+![model overview](/examples/model-overview.png?raw=true "model overview")
+
 To run our pre-trained models:
 
 ```python train_model.py -mode joint -dataset multithumos -train False -rgb_model_file models/multithumos/rgb_baseline -flow_model_file models/multithumos/flow_baseline```
@@ -28,17 +32,38 @@ To run our pre-trained models:
 
 We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html), [Charades](http://allenai.org/plato/charades/), and [AVA](https://research.google.com/ava/) datasets, using only the temporal annotations of AVA. We provide our trained models in the model directory as well as the convert json format for the datasets in the data directory.
 
+## Results
+On Charades:
+|   | mAP (%) |
+| ------------- | ------------- |
+| Two-Stream + LSTM [1] | 9.6  |
+| Sigurdsson et al. [1]  | 12.1  |
+| I3D baseline      | 17.22 |
+| I3D + Super-events | 19.41 |
+
+On MultiTHUMOS
+|   | mAP (%) |
+| ------------- | ------------- |
+| Two-Stream[2]  | 27.6  |
+| Two-Stream + LSTM[2] | 28.1 | 
+| Multi-LSTM[2]  | 29.6  |
+| I3D baseline | 29.7 |
+| I3D + LSTM | 29.9 |
+| I3D + Super-events | 36.4 |
+
 
 # Example Learned Super-events
 Our trained models on [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html) which contains ~2500 videos of 65 different activities in continuous videos and [Charades](http://allenai.org/plato/charades/) which contained ~10,000 continuous videos learned various super-events. Here are some example learned super-events from our models.
 
 For the block action, our model learned to focus on the pass/dribbe before the shot and the shot/dunk action.
 
+![basketball](/examples/learned-super-events.png?raw=true "basketball super-event")
+
+Here are examples of the temporal interval focused on by the supeer-event:
 ![dribble](/examples/dribble.gif?raw=true "Dribble super-event")
 ![block](/examples/block.gif?raw=true "Block/Dunk up Super-event")
 
 
-================================================================================
 
 
 # Requirements
@@ -53,3 +78,8 @@ Our code has been tested on Ubuntu 14.04 and 16.04 using python 2.7, [PyTorch](p
 2. Extract features from your dataset. See [Pytorch-I3D](https://github.com/piergiaj/pytorch-i3d) for our code to extract I3D features.
 
 3. [train_model.py](train_model.py) contains the code to train and evaluate models.
+
+
+# Refrences
+[1] G.  A.  Sigurdsson,  S.  Divvala,  A.  Farhadi,  and  A.  Gupta. Asynchronous temporal fields for action recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017
+[2] S. Yeung, O. Russakovsky, N. Jin, M. Andriluka, G. Mori, and L. Fei-Fei. Every moment counts: Dense detailed labeling of actions in complex videos. International Journal of Computer Vision (IJCV), pages 1–15, 2015

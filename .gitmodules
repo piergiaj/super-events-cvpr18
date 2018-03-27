@@ -1,0 +1,3 @@
+[submodule "pytorch-i3d"]
+	path = pytorch-i3d
+	url = https://github.com/piergiaj/pytorch-i3d
