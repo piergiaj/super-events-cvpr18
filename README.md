@@ -40,7 +40,7 @@ On Charades:
 | Two-Stream + LSTM [1] | 9.6  |
 | Sigurdsson et al. [1]  | 12.1  |
 | I3D baseline      | 17.22 |
-| I3D + Super-events | 19.41 |
+| I3D + Super-events | **19.41** |
 
 On MultiTHUMOS
 
@@ -51,7 +51,7 @@ On MultiTHUMOS
 | Multi-LSTM[2]  | 29.6  |
 | I3D baseline | 29.7 |
 | I3D + LSTM | 29.9 |
-| I3D + Super-events | 36.4 |
+| I3D + Super-events | **36.4** |
 
 
 # Example Learned Super-events
