@@ -34,7 +34,7 @@ We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everym
 
 ## Results
 On Charades:
-|   | mAP (%) |
+|  Method | mAP (%) |
 | ------------- | ------------- |
 | Two-Stream + LSTM [1] | 9.6  |
 | Sigurdsson et al. [1]  | 12.1  |
@@ -42,7 +42,7 @@ On Charades:
 | I3D + Super-events | 19.41 |
 
 On MultiTHUMOS
-|   | mAP (%) |
+|  Method | mAP (%) |
 | ------------- | ------------- |
 | Two-Stream[2]  | 27.6  |
 | Two-Stream + LSTM[2] | 28.1 | 
@@ -59,7 +59,7 @@ For the block action, our model learned to focus on the pass/dribbe before the s
 
 ![basketball](/examples/learned-super-events.png?raw=true "basketball super-event")
 
-Here are examples of the temporal interval focused on by the supeer-event:
+Here are examples of the temporal interval focused on by the super-event:
 ![dribble](/examples/dribble.gif?raw=true "Dribble super-event")
 ![block](/examples/block.gif?raw=true "Block/Dunk up Super-event")
 
@@ -82,4 +82,5 @@ Our code has been tested on Ubuntu 14.04 and 16.04 using python 2.7, [PyTorch](p
 
 # Refrences
 [1] G.  A.  Sigurdsson,  S.  Divvala,  A.  Farhadi,  and  A.  Gupta. Asynchronous temporal fields for action recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017
+
 [2] S. Yeung, O. Russakovsky, N. Jin, M. Andriluka, G. Mori, and L. Fei-Fei. Every moment counts: Dense detailed labeling of actions in complex videos. International Journal of Computer Vision (IJCV), pages 1–15, 2015
