@@ -61,12 +61,11 @@ For the block action, our model learned to focus on the pass/dribbe before the s
 
 ![basketball](/examples/learned-super-events.png?raw=true "basketball super-event")
 
-Here are examples of the temporal interval focused on by the super-event:
-![dribble](/examples/dribble.gif?raw=true "Dribble super-event")
-![block](/examples/block.gif?raw=true "Block/Dunk up Super-event")
+Here are examples of the temporal interval focused on by the super-event capturing the dribble activity:
+| ![dribble](/examples/dribble.gif?raw=true "Dribble super-event") | ![block](/examples/dribble2.gif?raw=true "Block/Dunk up Super-event") |
 
-
-
+Here are examples of the temporal interval focused on by the super-event capturing the dunk/block activity:
+| ![dribble](/examples/block.gif?raw=true "Dribble super-event") | ![block](/examples/block2.gif?raw=true "Block/Dunk up Super-event") |
 
 # Requirements
 
