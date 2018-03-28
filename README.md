@@ -29,8 +29,7 @@ To run our pre-trained models:
 
 ```python train_model.py -mode joint -dataset multithumos -train False -rgb_model_file models/multithumos/rgb_baseline -flow_model_file models/multithumos/flow_baseline```
 
-
-We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html), [Charades](http://allenai.org/plato/charades/), and [AVA](https://research.google.com/ava/) datasets, using only the temporal annotations of AVA. We provide our trained models in the model directory as well as the convert json format for the datasets in the data directory.
+We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html), [Charades](http://allenai.org/plato/charades/), and [AVA](https://research.google.com/ava/) datasets (only the temporal annotations were used in AVA). We provide our trained models in the model directory as well as the convert json format for the datasets in the data directory.
 
 ## Results
 On Charades:
@@ -39,17 +38,18 @@ On Charades:
 | ------------- | ------------- |
 | Two-Stream + LSTM [1] | 9.6  |
 | Sigurdsson et al. [1]  | 12.1  |
-| I3D[3] baseline      | 17.22 |
+| I3D [2] baseline      | 17.22 |
+| I3D + LSTM          | 18.1  |
 | I3D + Super-events | **19.41** |
 
 On MultiTHUMOS
 
 |  Method | mAP (%) |
 | ------------- | ------------- |
-| Two-Stream[2]  | 27.6  |
-| Two-Stream + LSTM[2] | 28.1 | 
-| Multi-LSTM[2]  | 29.6  |
-| I3D[3] baseline | 29.7 |
+| Two-Stream [3]  | 27.6  |
+| Two-Stream + LSTM [3] | 28.1 | 
+| Multi-LSTM [3]  | 29.6  |
+| I3D [2] baseline | 29.7 |
 | I3D + LSTM | 29.9 |
 | I3D + Super-events | **36.4** |
 
@@ -61,11 +61,15 @@ For the block action, our model learned to focus on the pass/dribbe before the s
 
 ![basketball](/examples/learned-super-events.png?raw=true "basketball super-event")
 
-Here are examples of the temporal interval focused on by the super-event capturing the dribble activity:
+
+
+Here are examples of the temporal interval focused on by the super-event for the 'block' action detection capturing dribbling:
 | ![dribble](/examples/dribble.gif?raw=true "Dribble super-event") | ![block](/examples/dribble2.gif?raw=true "Block/Dunk up Super-event") |
 
-Here are examples of the temporal interval focused on by the super-event capturing the dunk/block activity:
+
+Here are examples of the temporal interval focused on by the super-event for the 'block' action detection capturing blocking/dunking:
 | ![dribble](/examples/block.gif?raw=true "Dribble super-event") | ![block](/examples/block2.gif?raw=true "Block/Dunk up Super-event") |
+
 
 # Requirements
 
@@ -84,6 +88,6 @@ Our code has been tested on Ubuntu 14.04 and 16.04 using python 2.7, [PyTorch](p
 # Refrences
 [1] G.  A.  Sigurdsson,  S.  Divvala,  A.  Farhadi,  and  A.  Gupta. Asynchronous temporal fields for action recognition. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017
 
-[2] S. Yeung, O. Russakovsky, N. Jin, M. Andriluka, G. Mori, and L. Fei-Fei. Every moment counts: Dense detailed labeling of actions in complex videos. International Journal of Computer Vision (IJCV), pages 1–15, 2015
+[2] J. Carreira and A. Zisserman. Quo vadis, action recognition? A new model and the kinetics dataset. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
 
-[3] J. Carreira and A. Zisserman. Quo vadis, action recognition? A new model and the kinetics dataset. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+[3] S. Yeung, O. Russakovsky, N. Jin, M. Andriluka, G. Mori, and L. Fei-Fei. Every moment counts: Dense detailed labeling of actions in complex videos. International Journal of Computer Vision (IJCV), pages 1–15, 2015
