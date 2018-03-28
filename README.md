@@ -65,12 +65,12 @@ For the block action, our model learned to focus on the pass/dribbe before the s
 
 Here are examples of the temporal interval focused on by the super-event for the 'block' action detection capturing dribbling:
 
-<img src="/examples/dribble.gif?raw=true" width="48"> <img src="/examples/dribble3.gif?raw=true" width="48">
+<img src="/examples/dribble.gif?raw=true" width="150"> <img src="/examples/dribble3.gif?raw=true" width="150">
 
 
 Here are examples of the temporal interval focused on by the super-event for the 'block' action detection capturing blocking/dunking:
 
-![dribble](/examples/block.gif?raw=true | width=100) ![block](/examples/block2.gif?raw=true | width=100)
+<img src="/examples/block.gif?raw=true" width="150"> <img src="/examples/block2.gif?raw=true" width="150">
 
 
 # Requirements
