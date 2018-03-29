@@ -32,17 +32,18 @@ To run our pre-trained models:
 We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html), [Charades](http://allenai.org/plato/charades/), and [AVA](https://research.google.com/ava/) datasets (only the temporal annotations were used in AVA). We provide our trained models in the model directory as well as the convert json format for the datasets in the data directory.
 
 ## Results
-On Charades:
+Charades original test set (version 1 localization setting):
 
 |  Method | mAP (%) |
 | ------------- | ------------- |
 | Two-Stream + LSTM [1] | 9.6  |
-| Sigurdsson et al. [1]  | 12.1  |
+| Sigurdsson et al. [1]  | 12.8  |
 | I3D [2] baseline      | 17.22 |
 | I3D + LSTM          | 18.1  |
 | I3D + Super-events | **19.41** |
 
-On MultiTHUMOS
+
+MultiTHUMOS:
 
 |  Method | mAP (%) |
 | ------------- | ------------- |
