@@ -32,7 +32,7 @@ To run our pre-trained models:
 We tested our models on the [MultiTHUMOS](http://ai.stanford.edu/~syyeung/everymoment.html), [Charades](http://allenai.org/plato/charades/), and [AVA](https://research.google.com/ava/) datasets (only the temporal annotations were used in AVA). We provide our trained models in the model directory as well as the convert json format for the datasets in the data directory.
 
 ## Results
-Charades original test set (version 1 localization setting):
+Charades localization (Charades_v1_localize.m evaluation):
 
 |  Method | mAP (%) |
 | ------------- | ------------- |
