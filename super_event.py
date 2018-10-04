@@ -25,11 +25,11 @@ class SuperEvent(nn.Module):
         # to take 2xD*3 to D*3
         self.cls_wts = nn.Parameter(torch.Tensor(classes))
         
-        self.sup_mat = nn.Parameter(torch.Tensor(1, classes, 512*3))
+        self.sup_mat = nn.Parameter(torch.Tensor(1, classes, 1024*3))
         stdv = 1./np.sqrt(1024+1024)
         self.sup_mat.data.uniform_(-stdv, stdv)
 
-        self.per_frame = nn.Conv3d(512, classes, (1,1,1))
+        self.per_frame = nn.Conv3d(1024, classes, (1,1,1))
         self.per_frame.weight.data.uniform_(-stdv, stdv)
         self.per_frame.bias.data.uniform_(-stdv, stdv)
         self.add_module('pf', self.per_frame)
