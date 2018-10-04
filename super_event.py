@@ -25,11 +25,11 @@ class SuperEvent(nn.Module):
         # to take 2xD*3 to D*3
         self.cls_wts = nn.Parameter(torch.Tensor(classes))
         
-        self.sup_mat = nn.Parameter(torch.Tensor(1, classes, 1024))
+        self.sup_mat = nn.Parameter(torch.Tensor(1, classes, 512*3))
         stdv = 1./np.sqrt(1024+1024)
         self.sup_mat.data.uniform_(-stdv, stdv)
 
-        self.per_frame = nn.Conv3d(1024, classes, (1,1,1))
+        self.per_frame = nn.Conv3d(512, classes, (1,1,1))
         self.per_frame.weight.data.uniform_(-stdv, stdv)
         self.per_frame.bias.data.uniform_(-stdv, stdv)
         self.add_module('pf', self.per_frame)
@@ -42,19 +42,22 @@ class SuperEvent(nn.Module):
             val = True
             dim = 0
 
+        #print inp[0].size()
         super_event = self.dropout(torch.stack([self.super_event(inp).squeeze(), self.super_event2(inp).squeeze()], dim=dim))
         if val:
             super_event = super_event.unsqueeze(0)
         # we have B x 2 x D*3
         # we want B x C x D*3
 
+        #print super_event.size()
         # now we have C x 2 matrix
         cls_wts = torch.stack([torch.sigmoid(self.cls_wts), 1-torch.sigmoid(self.cls_wts)], dim=1)
 
         # now we do a bmm to get B x C x D*3
+        #print cls_wts.expand(inp[0].size()[0], -1, -1).size(), super_event.size()
         super_event = torch.bmm(cls_wts.expand(inp[0].size()[0], -1, -1), super_event)
         del cls_wts
-
+        print super_event.size()
         # apply the super-event weights
         super_event = torch.sum(self.sup_mat * super_event, dim=2)
         #super_event = self.sup_mat(super_event.view(-1, 1024)).view(-1, self.classes)

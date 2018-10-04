@@ -78,7 +78,7 @@ class TSF(nn.Module):
         o = torch.bmm(f, vid.squeeze(2))
         del f
         del vid
-        o = o.view(batch, channels, self.Ni).unsqueeze(3).unsqueeze(3)
+        o = o.view(batch, channels*self.Ni)#.unsqueeze(3).unsqueeze(3)
 	return o
 
 
